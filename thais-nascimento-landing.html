@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thais Nascimento - Fisioterapeuta e Acupunturista. Especialista em Acupuntura Estética e Liberação Miofascial Dermato Funcional.">
+    <title>Thais Nascimento | Fisioterapeuta & Acupunturista</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Paleta de cores */
+            --primary: #C9A98A;
+            --secondary: #6B4E3D;
+            --background: #FAF6F2;
+            --text: #2C1F18;
+            --white: #FFFFFF;
+            --accent-light: #E6D5C3;
+            --accent-dark: #4A3528;
+            
+            /* Tipografia */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            
+            /* Espaçamento */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+            
+            /* Transições */
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+            margin: var(--spacing-sm) auto 0;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ===== UTILITÁRIOS ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section {
+            padding: var(--spacing-xl) 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: 
+                radial-gradient(ellipse at top right, rgba(201, 169, 138, 0.15), transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(107, 78, 61, 0.1), transparent 50%),
+                var(--background);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 169, 138, 0.2), transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-50px, -50px) scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--white);
+            margin: 0 auto var(--spacing-md);
+            box-shadow: 
+                0 20px 60px rgba(107, 78, 61, 0.2),
+                0 0 0 15px rgba(201, 169, 138, 0.1);
+            animation: pulse 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 20px 60px rgba(107, 78, 61, 0.2), 0 0 0 15px rgba(201, 169, 138, 0.1); }
+            50% { box-shadow: 0 25px 70px rgba(107, 78, 61, 0.3), 0 0 0 20px rgba(201, 169, 138, 0.15); }
+        }
+
+        .hero-title {
+            margin-bottom: var(--spacing-xs);
+            color: var(--secondary);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--primary);
+            font-weight: 400;
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-display);
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text);
+            opacity: 0.9;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* ===== SOBRE MIM ===== */
+        .about {
+            background: var(--white);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            text-align: center;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            margin-top: var(--spacing-lg);
+        }
+
+        .badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            box-shadow: 0 4px 15px rgba(107, 78, 61, 0.2);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(107, 78, 61, 0.3);
+        }
+
+        .badge-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .badge-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ===== PROCEDIMENTOS ===== */
+        .procedures {
+            background: var(--background);
+        }
+
+        .procedures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .procedure-card {
+            background: var(--white);
+            padding: var(--spacing-md);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(107, 78, 61, 0.08);
+            transition: var(--transition);
+            border: 1px solid rgba(201, 169, 138, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .procedure-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .procedure-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(107, 78, 61, 0.15);
+        }
+
+        .procedure-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .procedure-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto var(--spacing-sm);
+            display: block;
+        }
+        
+        .procedure-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: var(--transition);
+        }
+        
+        .procedure-card:hover .procedure-icon svg {
+            stroke: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .procedure-title {
+            color: var(--secondary);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.25rem;
+        }
+
+        .procedure-description {
+            font-size: 0.95rem;
+            color: var(--text);
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+
+        /* ===== DIFERENCIAIS ===== */
+        .differentials {
+            background: linear-gradient(135deg, var(--secondary), var(--accent-dark));
+            color: var(--white);
+        }
+
+        .differentials h2 {
+            color: var(--white);
+        }
+
+        .differentials h2::after {
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .differential-item {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .differential-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-sm);
+            display: block;
+        }
+        
+        .differential-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--accent-light);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        .differential-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xs);
+            color: var(--accent-light);
+        }
+
+        .differential-text {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: var(--background);
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            align-items: center;
+            margin-top: var(--spacing-lg);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            min-width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
+            color: var(--white);
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(225, 48, 108, 0.4);
+        }
+
+        .btn-icon {
+            font-size: 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--white);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+            border-top: 1px solid rgba(201, 169, 138, 0.2);
+        }
+
+        .footer-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-instagram {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: var(--spacing-sm);
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .footer-instagram:hover {
+            color: var(--secondary);
+        }
+
+        .footer-tagline {
+            font-size: 0.95rem;
+            font-style: italic;
+            opacity: 0.8;
+            max-width: 400px;
+            margin: var(--spacing-sm) auto 0;
+        }
+
+        /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+            animation: floatBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.6);
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .procedures-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            :root {
+                --spacing-xl: 3rem;
+                --spacing-lg: 2rem;
+            }
+            
+            .hero {
+                min-height: 85vh;
+            }
+            
+            .profile-image {
+                width: 130px;
+                height: 130px;
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                min-width: 280px;
+                padding: 1rem 2rem;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+            
+            .procedures-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .procedures-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== ACESSIBILIDADE ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Fallback para navegadores sem suporte a clamp */
+        @supports not (font-size: clamp(1rem, 2vw, 1.5rem)) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 1.75rem; }
+            p { font-size: 1.125rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">TN</div>
+                <h1 class="hero-title">Thais Nascimento</h1>
+                <p class="hero-subtitle">Fisioterapeuta | Acupunturista</p>
+                <p class="hero-tagline">Saúde, equilíbrio e resultados reais para o seu corpo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section class="section about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <p>
+                    Sou fisioterapeuta especializada em unir o melhor da fisioterapia tradicional com técnicas 
+                    estéticas e terapêuticas avançadas. Minha missão é proporcionar saúde integral, equilibrando 
+                    corpo e mente através de procedimentos personalizados e baseados em ciência.
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    Com formação sólida e constante atualização, ofereço tratamentos que vão além do sintoma, 
+                    buscando a causa raiz e promovendo bem-estar duradouro.
+                </p>
+                
+                <div class="badges">
+                    <div class="badge">
+                        <span class="badge-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L12 15L23 9L12 3Z"/>
+                                <path d="M1 9V15L12 21L23 15V9"/>
+                            </svg>
+                        </span>
+                        <span>Fisioterapeuta</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                                <line x1="12" y1="2" x2="12" y2="6"/>
+                                <line x1="12" y1="18" x2="12" y2="22"/>
+                                <line x1="2" y1="12" x2="6" y2="12"/>
+                                <line x1="18" y1="12" x2="22" y2="12"/>
+                            </svg>
+                        </span>
+                        <span>Pós-Graduada em Acupuntura</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/>
+                            </svg>
+                        </span>
+                        <span>Acupuntura Estética</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17C9 17 9 15 11 15C13 15 13 17 15 17C17 17 17 15 19 15"/>
+                                <path d="M5 9C7 9 7 7 9 7C11 7 11 9 13 9C15 9 15 7 17 7"/>
+                                <circle cx="12" cy="12" r="10"/>
+                            </svg>
+                        </span>
+                        <span>Liberação Miofascial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCEDIMENTOS -->
+    <section class="section procedures">
+        <div class="container">
+            <h2>Procedimentos</h2>
+            <div class="procedures-grid">
+                <!-- Acupuntura Sistêmica -->
+                <div class="procedure-card">
+                    <div class="procedure-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Agulha de acupuntura -->
+                            <line x1="50" y1="20" x2="50" y2="75" stroke-width="2"/>
+                            <circle cx="50" cy="17" r="3" fill="var(--primary)"/>
+                            <!-- Círculos de energia -->
+                            <circle cx="35" cy="40" r="8" opacity="0.3"/>
+                            <circle cx="65" cy="45" r="6" opacity="0.3"/>
+                            <circle cx="50" cy="60" r="7" opacity="0.3"/>
+                            <!-- Linhas de fluxo energético -->
+                            <path d="M 30 35 Q 40 38 50 35" opacity="0.4"/>
+                            <path d="M 55 50 Q 60 48 70 50" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h3 class="procedure-title">Acupuntura Sistêmica e Auricular</h3>
+                    <p class="procedure-description">
+                        Equilíbrio energético, alívio de dores, ansiedade e distúrbios orgânicos através de 
+                        técnica milenar reconhecida pela OMS.
+                    </p>
+                </div>
+
+                <!-- Acupuntura Estética -->
+                <div class="procedure-card">
+                    <div class="procedure-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Rosto estilizado -->
+                            <circle cx="50" cy="50" r="25"/>
+                            <!-- Linhas de tratamento facial -->
+                            <path d="M 30 40 Q 35 38 40 40" opacity="0.6"/>
+                            <path d="M 60 40 Q 65 38 70 40" opacity="0.6"/>
+                            <path d="M 35 55 Q 50 58 65 55" opacity="0.6"/>
+                            <!-- Pontos de acupuntura -->
+                            <circle cx="38" cy="42" r="1.5" fill="var(--primary)"/>
+                            <circle cx="62" cy="42" r="1.5" fill="var(--primary)"/>
+                            <circle cx="50" cy="35" r="1.5" fill="var(--primary)"/>
+                            <circle cx="42" cy="56" r="1.5" fill="var(--primary)"/>
+                            <circle cx="58" cy="56" r="1.5" fill="var(--primary)"/>
+                            <!-- Aura de beleza -->
+                            <circle cx="50" cy="50" r="30" opacity="0.2" stroke-dasharray="3,3"/>
+                        </svg>
+                    </div>
+                    <h3 class="procedure-title">Acupuntura Estética</h3>
+                    <p class="procedure-description">
+                        Tratamento facial e corporal para rejuvenescimento, tonificação muscular e harmonização 
+                        estética natural.
+                    </p>
+                </div>
+
+                <!-- Ventosaterapia -->
+                <div class="procedure-card">
+                    <div class="procedure-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ventosa -->
+                            <path d="M 35 45 Q 35 35 50 35 Q 65 35 65 45 L 65 60 Q 65 70 50 70 Q 35 70 35 60 Z"/>
+                            <!-- Topo da ventosa -->
+                            <ellipse cx="50" cy="35" rx="15" ry="5" fill="var(--primary)" opacity="0.3"/>
+                            <!-- Efeito de sucção -->
+                            <circle cx="50" cy="52" r="8" opacity="0.2"/>
+                            <circle cx="50" cy="52" r="5" opacity="0.3"/>
+                            <circle cx="50" cy="52" r="2" fill="var(--secondary)"/>
+                            <!-- Linhas de fluxo -->
+                            <path d="M 50 52 L 50 40" opacity="0.4" stroke-dasharray="2,2"/>
+                            <path d="M 44 50 L 50 52 L 56 50" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h3 class="procedure-title">Ventosaterapia com Sangria</h3>
+                    <p class="procedure-description">
+                        Técnica ancestral para liberação profunda de tensões, melhora circulatória e 
+                        detoxificação do organismo.
+                    </p>
+                </div>
+
+                <!-- Drenagem Linfática -->
+                <div class="procedure-card">
+                    <div class="procedure-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Corpo estilizado -->
+                            <ellipse cx="50" cy="50" rx="20" ry="30"/>
+                            <!-- Linhas de drenagem -->
+                            <path d="M 50 25 Q 55 35 50 45 Q 45 55 50 65 Q 55 75 50 80" opacity="0.5" stroke-dasharray="3,2"/>
+                            <path d="M 35 40 Q 40 45 35 50 Q 30 55 35 60" opacity="0.5" stroke-dasharray="3,2"/>
+                            <path d="M 65 40 Q 60 45 65 50 Q 70 55 65 60" opacity="0.5" stroke-dasharray="3,2"/>
+                            <!-- Ondas elétricas (corrente russa) -->
+                            <path d="M 25 30 L 28 27 L 31 30 L 34 27 L 37 30" opacity="0.6"/>
+                            <path d="M 63 30 L 66 27 L 69 30 L 72 27 L 75 30" opacity="0.6"/>
+                            <!-- Gotas representando linfa -->
+                            <circle cx="50" cy="35" r="2" fill="var(--primary)" opacity="0.4"/>
+                            <circle cx="40" cy="50" r="2" fill="var(--primary)" opacity="0.4"/>
+                            <circle cx="60" cy="50" r="2" fill="var(--primary)" opacity="0.4"/>
+                            <circle cx="50" cy="65" r="2" fill="var(--primary)" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h3 class="procedure-title">Drenagem Linfática com Corrente Russa</h3>
+                    <p class="procedure-description">
+                        Protocolo avançado para eliminação de toxinas, redução de inchaço e modelagem corporal 
+                        com tecnologia de eletroestimulação.
+                    </p>
+                </div>
+
+                <!-- Manta Térmica -->
+                <div class="procedure-card">
+                    <div class="procedure-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Manta estilizada -->
+                            <rect x="25" y="35" width="50" height="35" rx="3"/>
+                            <!-- Padrão de calor -->
+                            <line x1="30" y1="40" x2="70" y2="40" opacity="0.3"/>
+                            <line x1="30" y1="45" x2="70" y2="45" opacity="0.3"/>
+                            <line x1="30" y1="50" x2="70" y2="50" opacity="0.3"/>
+                            <line x1="30" y1="55" x2="70" y2="55" opacity="0.3"/>
+                            <line x1="30" y1="60" x2="70" y2="60" opacity="0.3"/>
+                            <line x1="30" y1="65" x2="70" y2="65" opacity="0.3"/>
+                            <!-- Ondas de calor ascendentes -->
+                            <path d="M 35 30 Q 37 27 39 30" opacity="0.5"/>
+                            <path d="M 45 28 Q 47 25 49 28" opacity="0.5"/>
+                            <path d="M 55 30 Q 57 27 59 30" opacity="0.5"/>
+                            <path d="M 65 28 Q 67 25 69 28" opacity="0.5"/>
+                            <!-- Símbolo de temperatura -->
+                            <circle cx="50" cy="52" r="6" fill="var(--primary)" opacity="0.2"/>
+                            <line x1="50" y1="52" x2="50" y2="48" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="procedure-title">Manta Térmica</h3>
+                    <p class="procedure-description">
+                        Termoterapia para aceleração do metabolismo, combate à celulite e estímulo circulatório 
+                        através do calor terapêutico.
+                    </p>
+                </div>
+
+                <!-- Liberação Miofascial -->
+                <div class="procedure-card">
+                    <div class="procedure-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Mãos terapêuticas -->
+                            <path d="M 35 45 Q 30 50 32 55 L 35 60 Q 40 63 43 60 L 50 53" opacity="0.8"/>
+                            <path d="M 65 45 Q 70 50 68 55 L 65 60 Q 60 63 57 60 L 50 53" opacity="0.8"/>
+                            <!-- Camadas de fáscia -->
+                            <ellipse cx="50" cy="55" rx="15" ry="10" opacity="0.2"/>
+                            <ellipse cx="50" cy="55" rx="12" ry="8" opacity="0.3"/>
+                            <ellipse cx="50" cy="55" rx="9" ry="6" opacity="0.4"/>
+                            <!-- Linhas de tensão sendo liberadas -->
+                            <path d="M 40 50 L 45 52" opacity="0.4" stroke-dasharray="2,2"/>
+                            <path d="M 60 50 L 55 52" opacity="0.4" stroke-dasharray="2,2"/>
+                            <path d="M 45 60 L 50 58" opacity="0.4" stroke-dasharray="2,2"/>
+                            <path d="M 55 60 L 50 58" opacity="0.4" stroke-dasharray="2,2"/>
+                            <!-- Ponto de pressão central -->
+                            <circle cx="50" cy="55" r="3" fill="var(--primary)" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="procedure-title">Liberação Miofascial Dermato Funcional</h3>
+                    <p class="procedure-description">
+                        Técnica manual especializada para liberar tensões profundas, tratar cicatrizes e melhorar 
+                        a qualidade e elasticidade da pele.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="section differentials">
+        <div class="container">
+            <h2>Meus Diferenciais</h2>
+            <div class="differentials-grid">
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Microscópio estilizado -->
+                            <circle cx="50" cy="30" r="8"/>
+                            <line x1="50" y1="38" x2="50" y2="55"/>
+                            <rect x="40" y="55" width="20" height="15" rx="2"/>
+                            <line x1="35" y1="70" x2="65" y2="70" stroke-width="3"/>
+                            <!-- Moléculas científicas -->
+                            <circle cx="30" cy="40" r="3" opacity="0.6"/>
+                            <circle cx="70" cy="35" r="3" opacity="0.6"/>
+                            <circle cx="65" cy="50" r="3" opacity="0.6"/>
+                            <line x1="30" y1="40" x2="40" y2="45" opacity="0.4"/>
+                            <line x1="70" y1="35" x2="60" y2="40" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h4 class="differential-title">Embasamento Científico</h4>
+                    <p class="differential-text">
+                        Técnicas comprovadas cientificamente, alinhadas às melhores práticas internacionais 
+                        de fisioterapia e acupuntura.
+                    </p>
+                </div>
+
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Coração com batimento -->
+                            <path d="M 50 70 Q 30 50 30 35 Q 30 20 40 20 Q 50 20 50 30 Q 50 20 60 20 Q 70 20 70 35 Q 70 50 50 70 Z"/>
+                            <!-- Pulso -->
+                            <path d="M 25 45 L 30 45 L 35 35 L 40 55 L 45 45 L 50 45" opacity="0.5" stroke-width="2"/>
+                            <path d="M 50 45 L 55 45 L 60 35 L 65 55 L 70 45 L 75 45" opacity="0.5" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h4 class="differential-title">Atendimento Personalizado</h4>
+                    <p class="differential-text">
+                        Cada paciente é único. Protocolos customizados de acordo com suas necessidades, 
+                        objetivos e condições específicas.
+                    </p>
+                </div>
+
+                <div class="differential-item">
+                    <div class="differential-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Alvo com centro preciso -->
+                            <circle cx="50" cy="50" r="30"/>
+                            <circle cx="50" cy="50" r="20" opacity="0.7"/>
+                            <circle cx="50" cy="50" r="10" opacity="0.8"/>
+                            <circle cx="50" cy="50" r="4" fill="var(--accent-light)"/>
+                            <!-- Setas convergindo -->
+                            <path d="M 30 30 L 40 40" opacity="0.6" stroke-width="2"/>
+                            <path d="M 70 30 L 60 40" opacity="0.6" stroke-width="2"/>
+                            <path d="M 70 70 L 60 60" opacity="0.6" stroke-width="2"/>
+                            <path d="M 30 70 L 40 60" opacity="0.6" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h4 class="differential-title">Protocolos Combinados</h4>
+                    <p class="differential-text">
+                        Associação inteligente de técnicas para potencializar resultados e proporcionar 
+                        tratamentos mais completos e eficazes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Agende sua Consulta</h2>
+            <p style="text-align: center; max-width: 600px; margin: var(--spacing-md) auto;">
+                Dê o primeiro passo rumo ao seu bem-estar. Entre em contato para conhecer mais sobre 
+                os tratamentos e agendar uma avaliação personalizada.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/5500000000000" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                    <span class="btn-icon">📱</span>
+                    <span>Agende pelo WhatsApp</span>
+                </a>
+                
+                <a href="https://instagram.com/thanasciment0" class="btn btn-instagram" target="_blank" rel="noopener">
+                    <span class="btn-icon">📸</span>
+                    <span>Siga no Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer-name">Thais Nascimento</h3>
+            <a href="https://instagram.com/thanasciment0" class="footer-instagram" target="_blank" rel="noopener">
+                @thanasciment0
+            </a>
+            <p class="footer-tagline">
+                Cuidando de você com ciência e cuidado.
+            </p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ===== INTERSECTION OBSERVER PARA ANIMAÇÕES =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas as sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // ===== SMOOTH SCROLL PARA LINKS ÂNCORA =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ===== ANIMAÇÃO DE ENTRADA NO CARREGAMENTO =====
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease-in';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // ===== PREVENÇÃO DE SPAM NOS BOTÕES =====
+        let clickTimeout;
+        document.querySelectorAll('.btn, .whatsapp-float').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (clickTimeout) {
+                    e.preventDefault();
+                    return;
+                }
+                
+                clickTimeout = setTimeout(() => {
+                    clickTimeout = null;
+                }, 1000);
+            });
+        });
+
+        // ===== ACESSIBILIDADE: FOCO VISÍVEL =====
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-nav');
+        });
+
+        // ===== PERFORMANCE: LAZY LOADING DE IMAGENS (futuro) =====
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback para navegadores antigos
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+
+        // ===== CONSOLE LOG (remover em produção) =====
+        console.log('%c🌿 Landing Page - Thais Nascimento', 'color: #C9A98A; font-size: 16px; font-weight: bold;');
+        console.log('%cDesenvolvido com Claude ✨', 'color: #6B4E3D; font-size: 12px;');
+    </script>
+</body>
+</html>
